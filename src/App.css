@@ -1,37 +1,257 @@
-.App {
+/*=== CSS IMPORTS ===*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/*=== RESET ===*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.15;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #f2f2f2;
+}
+
+/*=== UTILS ===*/
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/*=== TOP ===*/
+
+.top {
   text-align: center;
+  padding: 64px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.top img {
+  margin-top: 32px;
+  max-width: 100%;
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top h1 {
+  margin-top: 24px;
+  font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*=== VEHICLES ===*/
+
+.vehicles {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.vehicle {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #FFFFFF;
+  background: linear-gradient(90deg, #4FC7D5 0%, #42B0D1 100%);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  min-height: 106px;
+  min-width: 106px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.vehicle + .vehicle {
+  margin-left: 10px;
+}
+
+.sloading {
+  min-height: 32px;
+}
+
+/*=== FORM ===*/
+.select-year {
+  margin-left: 40%;
+  margin-top: 2%;
+  width: 20%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.select-year option {
+  background-color: #ffffff;
+  color: #000000;
+  margin-left: 0%;
+  width: 100%;
+  font-size: 14px;
+}
+
+
+
+.form {
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+label {
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.form select {
+  margin-top: 8px;
+  padding: 10px;
+  min-width: 300px;
+  background-color: #FFFFFF;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #333333;
+}
+
+.submit {
+  margin-top: 32px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  background: linear-gradient(90deg, #4FC7D5 0%, #42B0D1 100%);
+  outline: none;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  min-height: 40px;
+  min-width: 200px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #3399CC;
+}
+
+/*=== RESULT ===*/
+
+.result {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  width: 60%;
+  padding: 32px;
+  text-align: center;
+  border: 3px solid #42B0D1;
+  border-radius: 6px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.result h2 {
+  color: #42B0D1;
+  margin-top: 24px;
+  font-size: 1.8rem;
+}
+
+.result h6 {
+  margin-top: 24px;
+  font-size: 1rem;
+  color: #666666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#t-v {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#t-v td, #t-v th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#t-v tr:nth-child(even){background-color: #f2f2f2;}
+
+#t-v tr:hover {background-color: #ddd;}
+
+#t-v th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #06a6e6;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*== VISIBLE CONTROLS ===*/
+
+.hidden-element {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.shown-element {
+  display: block;
+}
+
+/*== ANIMATIONS ===*/
+
+.loading {
+  margin: 16px auto;
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid rgba(79, 199, 213, 0.3);
+  border-radius: 50%;
+  border-top-color: #42B0D1;
+  animation: spin 1s infinite ease-in-out;
+}
+
+@keyframes spin {
   to {
     transform: rotate(360deg);
   }
